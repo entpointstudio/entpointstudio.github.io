@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.Point Studio | Indie Game Developer</title>
+    <!-- Google Fonts: EB Garamond & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700;1,800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="restoria-page">
+
+    <!-- NAVBAR -->
+    <nav class="navbar fade-up">
+        <div class="navbar-logo">
+            <a href="index.html" style="text-decoration: none;">
+                <img src="assets/framer_assets/0O8AmmEE0BCmutnB0kLEMtS75s.png" alt="N.Point Logo" class="npoint-logo-img">
+            </a>
+        </div>
+        <div class="nav-links">
+            <a href="about.html">About</a>
+            <a href="restoria.html">Restoria</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <div class="page-wrapper">
+
+        <!-- HERO SECTION -->
+        <section class="hero" id="home">
+            <img src="assets/framer_assets/lS8pivuCL7u6dhwCs5cZYM5v1JI.png" alt="N.Point Restoria Type" class="npoint-type-img fade-up delay-1">
+            <div class="subtitle fade-up delay-2">- Cozy Artifact Restoration -</div>
+            <a href="#" class="btn fade-up delay-2">
+                Wishlist Now on Steam
+                <span class="steam-circle"><img src="assets/framer_assets/steam.svg" alt="Steam"></span>
+            </a>
+        </section>
+
+        <!-- VIDEO SECTION -->
+        <div class="video-hero fade-up delay-1">
+            <video src="assets/EsgnPI0P198047tZdTSOdJqfGc.mp4" autoplay loop muted playsinline preload="auto"></video>
+        </div>
+
+        <!-- MEET N.POINT SECTION -->
+        <section class="meet-npoint-section fade-up">
+            <div class="meet-content">
+                <h2>Meet N.Point</h2>
+                <p>Go ahead and say just a little more about what you do.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-dark">Follow my Profile</a>
+                    <a href="#" class="btn btn-outline">Secondary</a>
+                </div>
+            </div>
+            <div class="meet-image">
+                <img src="assets/framer_assets/MhVKvPROX81GxgpOnhmO7uekIY.png" alt="Meet N.Point">
+            </div>
+        </section>
+
+        <!-- OUR GAMES SECTION -->
+        <section class="our-games-section fade-up" id="games">
+            <h2 class="section-title">Our Games</h2>
+            <div class="games-grid">
+                <!-- Game 1 -->
+                <div class="game-card">
+                    <div class="game-img">
+                        <img src="assets/restoria_artifact_cleaning_1775536648511.png" alt="Restoria Screenshot">
+                    </div>
+                    <div class="game-info">
+                        <h3>Restoria</h3>
+                        <p>Mindfully clean and polish ancient artifacts to uncover their hidden stories and magical history.</p>
+                    </div>
+                </div>
+                <!-- Game 2 -->
+                <div class="game-card">
+                    <div class="game-img">
+                         <img src="assets/restoria_magical_forest_1775534982587.png" alt="Heir of Smith Screenshot">
+                    </div>
+                    <div class="game-info">
+                        <h3>Heir of Smith</h3>
+                        <p>Forge powerful weapons and explore lush, mystical forests in this adventure-driven blacksmith simulator.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SOCIALS SECTION -->
+        <section class="restoria-socials fade-up" id="contact">
+            <h2>You can also find us on</h2>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/restoria.game/" target="_blank" class="social-box"><img src="assets/framer_assets/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@playrestoria" target="_blank" class="social-box"><img src="assets/framer_assets/tiktok.svg" alt="TikTok"></a>
+                <a href="#" class="social-box"><img src="assets/framer_assets/facebook.svg" alt="Facebook"></a>
+                <a href="#" class="social-box"><img src="assets/framer_assets/discord.svg" alt="Discord"></a>
+                <a href="#" class="social-box"><img src="assets/framer_assets/linkedin.svg" alt="LinkedIn"></a>
+                <a href="#" class="social-box"><img src="assets/framer_assets/steam.svg" alt="Steam" style="filter: brightness(0);"></a>
+                <a href="#" class="social-box"><img src="assets/framer_assets/apple.svg" alt="Apple" style="filter: brightness(0);"></a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="fade-up">
+            <div class="footer-logo">
+                <img src="assets/framer_assets/0O8AmmEE0BCmutnB0kLEMtS75s.png" alt="N.Point Logo" class="npoint-logo-img">
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Games</h4>
+                    <a href="restoria.html">Restoria</a>
+                    <a href="#games">Heir of Smith</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Studio</h4>
+                    <a href="about.html">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press Kit</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
