@@ -1044,6 +1044,539 @@ p {
     height: 24px;
 }
 
+/* --- COME ON GAMES AESTHETIC --- */
+html:has(.cog-page) {
+    scroll-behavior: smooth;
+}
+
+.cog-page {
+    --cog-ink: #000000;
+    --cog-link: #0099ff;
+    --cog-ring: rgba(255, 255, 255, 0);
+    background-color: #fff;
+    color: var(--cog-ink);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.2;
+}
+
+.cog-page ::selection {
+    background-color: #eac784;
+    color: #31231d;
+}
+
+.cog-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 160px;
+}
+
+/* Big sentence-style headlines with inline blue links */
+.cog-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(36px, 5vw, 60px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0;
+    color: var(--cog-ink);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.cog-inline-link {
+    color: var(--cog-link);
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 6px;
+    transition: opacity 0.2s ease;
+}
+
+.cog-inline-link:hover {
+    opacity: 0.7;
+}
+
+/* Status pill: label + colored circle with tilted arrow */
+.cog-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 16px;
+    padding: 11px 20px;
+    border-radius: 321px;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cog-status-pill:hover {
+    transform: scale(1.06);
+}
+
+.cog-status-circle {
+    width: 59px;
+    height: 59px;
+    border-radius: 321px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 0 2px var(--cog-ring);
+}
+
+.cog-status-circle.green {
+    background-color: #c4927a;
+}
+
+.cog-status-circle.orange {
+    background-color: #31231d;
+}
+
+.cog-arrow-icon {
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    transform: rotate(22deg);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.cog-status-pill:hover .cog-arrow-icon {
+    transform: rotate(0deg);
+}
+
+.cog-status-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--cog-ink);
+}
+
+/* Hero: floating cards pinned to top/bottom bands, headline in the clear middle band */
+.cog-hero {
+    position: relative;
+    width: 100%;
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cog-hero .cog-headline {
+    max-width: 900px;
+    text-wrap: balance;
+}
+
+.cog-previews {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.cog-preview-card {
+    position: absolute;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+    pointer-events: auto;
+    will-change: transform;
+}
+
+.cog-preview-card video,
+.cog-preview-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Cards live in the top and bottom bands only, so the headline stays readable */
+.cog-preview-card {
+    width: clamp(190px, 21vw, 310px);
+    aspect-ratio: 8 / 5;
+}
+
+.cog-preview-card:nth-child(1) {
+    top: 2%;
+    left: 2%;
+}
+
+.cog-preview-card:nth-child(2) {
+    bottom: 4%;
+    left: 8%;
+}
+
+.cog-preview-card:nth-child(3) {
+    top: 6%;
+    right: 2%;
+}
+
+.cog-preview-card:nth-child(4) {
+    bottom: 2%;
+    right: 8%;
+}
+
+.cog-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    width: 100%;
+}
+
+/* Statement block before footer */
+.cog-statement {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.cog-statement-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(40px, 6.5vw, 90px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    max-width: 1100px;
+    margin: 0;
+    text-align: center;
+    color: var(--cog-ink);
+}
+
+/* Custom Video Player Mockup styling */
+.cog-video-container,
+.cog-media-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 60px;
+    overflow: hidden;
+    background-color: #000;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+}
+
+.cog-media-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cog-video-player {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.cog-player-ui {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.cog-video-container:hover .cog-player-ui,
+.cog-video-container.is-paused .cog-player-ui {
+    opacity: 1;
+}
+
+/* Center Play Button Overlay */
+.cog-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    width: 80px;
+    height: 80px;
+    background-color: rgba(196, 146, 122, 0.95);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(196, 146, 122, 0.4);
+    transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), background-color 0.3s;
+    pointer-events: auto;
+    z-index: 3;
+}
+
+.cog-video-container:hover .cog-play-btn {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.cog-play-btn:hover {
+    background-color: #c4927a;
+    transform: translate(-50%, -50%) scale(1.05) !important;
+}
+
+.cog-play-icon {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 24px;
+    border-color: transparent transparent transparent #ffffff;
+    margin-left: 6px;
+}
+
+.cog-play-btn.playing .cog-play-icon {
+    border: none;
+    width: 20px;
+    height: 24px;
+    display: flex;
+    gap: 6px;
+}
+
+.cog-play-btn.playing .cog-play-icon::before,
+.cog-play-btn.playing .cog-play-icon::after {
+    content: '';
+    width: 7px;
+    height: 100%;
+    background-color: #fff;
+    display: block;
+}
+
+/* Bottom Controls */
+.cog-controls-bar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    pointer-events: auto;
+}
+
+.cog-timeline-container {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    transition: height 0.2s;
+}
+
+.cog-timeline-container:hover {
+    height: 8px;
+}
+
+.cog-timeline {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cog-progress {
+    width: 0%;
+    height: 100%;
+    background-color: #c4927a;
+    border-radius: 3px;
+    position: relative;
+}
+
+.cog-progress::after {
+    content: "";
+    position: absolute;
+    right: -8px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    transition: transform 0.2s;
+}
+
+.cog-timeline-container:hover .cog-progress::after {
+    transform: translateY(-50%) scale(1);
+}
+
+.cog-controls-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.cog-controls-left, .cog-controls-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cog-control-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+.cog-control-btn:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.cog-control-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.cog-time-display {
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.cog-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    max-width: 760px;
+    margin: 0;
+    color: var(--cog-ink);
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Footer: logo, nav list, socials */
+.cog-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 64px;
+    padding-bottom: 60px;
+}
+
+.cog-footer-brand {
+    display: flex;
+    justify-content: center;
+}
+
+.cog-logo-img {
+    height: 48px;
+    width: auto;
+}
+
+.cog-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.cog-nav-item {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+}
+
+.cog-nav-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 3.5vw, 48px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: var(--cog-ink);
+}
+
+.cog-nav-action {
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(20px, 2vw, 28px);
+    font-weight: 500;
+    color: var(--cog-link);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.cog-nav-action:hover {
+    opacity: 0.7;
+}
+
+.cog-footer-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.cog-socials {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+}
+
+.cog-socials a {
+    font-family: 'Inter', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--cog-ink);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.cog-socials a:hover {
+    color: #ff5429;
+}
+
+@media (max-width: 900px) {
+    .cog-container {
+        padding: 40px 20px;
+        gap: 100px;
+    }
+    .cog-hero {
+        min-height: 70vh;
+    }
+    .cog-preview-card {
+        width: clamp(120px, 36vw, 160px);
+    }
+    .cog-preview-card:nth-child(1) {
+        top: 1%;
+        left: 0;
+    }
+    .cog-preview-card:nth-child(2) {
+        bottom: 7%;
+        left: 6%;
+    }
+    .cog-preview-card:nth-child(3) {
+        top: 7%;
+        right: 0;
+    }
+    .cog-preview-card:nth-child(4) {
+        bottom: 1%;
+        right: 6%;
+    }
+    .cog-video-container,
+    .cog-media-container {
+        border-radius: 24px;
+    }
+    .cog-description {
+        font-size: 18px;
+    }
+    .cog-nav-item {
+        gap: 16px;
+    }
+    .cog-footer {
+        gap: 48px;
+    }
+}
 @media (max-width: 900px) {
     .meet-npoint-section {
         flex-direction: column;
