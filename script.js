@@ -15,6 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // GSAP spring animations for the cog homepage
     if (!document.body.classList.contains('cog-page') || !window.gsap) return;
+
+    // Wait for the full load (fonts, images, gifs) so every section has its
+    // final layout height before ScrollTrigger measures scroll positions —
+    // measuring too early causes triggers to fire at the wrong scroll offset.
+    if (document.readyState === 'complete') {
+        initCogAnimations();
+    } else {
+        window.addEventListener('load', initCogAnimations);
+    }
+});
+
+function initCogAnimations() {
     gsap.registerPlugin(ScrollTrigger);
 
     const spring = 'elastic.out(1, 0.75)';
@@ -123,4 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
             onEnterBack: paint
         });
     });
-});
+
+    ScrollTrigger.refresh();
+}

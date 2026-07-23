@@ -437,6 +437,15 @@ p {
     padding: 120px 20px 60px 20px;
 }
 
+.restoria-icon-badge {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    margin-bottom: 24px;
+}
+
 .restoria-page .hero h1 {
     font-family: 'EB Garamond', serif;
     font-size: clamp(60px, 12vw, 150px);
@@ -1533,7 +1542,28 @@ html:has(.cog-page) {
 }
 
 .cog-socials a:hover {
-    color: #ff5429;
+    color: #c4927a;
+}
+
+/* Artifact scroller: same infinite marquee as restoria.html, but each
+   relic sits on its own cream pedestal since the renders are cutouts */
+.cog-artifact-scroller {
+    padding: 20px 0;
+}
+
+.cog-artifact-scroller .scroller-track {
+    animation-duration: 26s;
+    align-items: center;
+}
+
+.cog-artifact-scroller .scroller-track img {
+    height: 240px;
+    width: 240px;
+    object-fit: contain;
+    background-color: #fdf3e5;
+    border-radius: 24px;
+    padding: 28px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
 }
 
 @media (max-width: 900px) {
@@ -1575,6 +1605,11 @@ html:has(.cog-page) {
     }
     .cog-footer {
         gap: 48px;
+    }
+    .cog-artifact-scroller .scroller-track img {
+        height: 160px;
+        width: 160px;
+        padding: 18px;
     }
 }
 @media (max-width: 900px) {

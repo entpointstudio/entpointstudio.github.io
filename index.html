@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body class="cog-page">
     <div class="cog-container">
@@ -18,16 +18,16 @@
             <div class="cog-hero">
                 <div class="cog-previews">
                     <div class="cog-preview-card">
-                        <img src="assets/restoria_ancient_temple_1775535003839.png" alt="Restoria — ancient temple">
+                        <img src="assets/restoria/gifs/hero-chisel.gif" alt="Restoria — chiseling away grime">
                     </div>
                     <div class="cog-preview-card">
-                        <img src="assets/restoria_artifact_cleaning_1775536648511.png" alt="Restoria — artifact cleaning">
+                        <img src="assets/restoria/gifs/hero-brush.gif" alt="Restoria — brushing an artifact clean">
                     </div>
                     <div class="cog-preview-card">
-                        <img src="assets/restoria_glowing_artifact_1775535023765.png" alt="Restoria — glowing artifact">
+                        <img src="assets/restoria/gifs/hero-turntable.gif" alt="Restoria — inspecting a restored artifact">
                     </div>
                     <div class="cog-preview-card">
-                        <img src="assets/restoria_magical_forest_1775534982587.png" alt="Restoria — magical forest">
+                        <img src="assets/restoria/gifs/hero-menu.gif" alt="Restoria — main menu">
                     </div>
                 </div>
 
@@ -45,10 +45,10 @@
                 </span>
             </a>
 
-            <div class="cog-video-container">
-                <video src="assets/EsgnPI0P198047tZdTSOdJqfGc.mp4" loop muted playsinline autoplay class="cog-video-player"></video>
+            <div class="cog-video-container is-paused">
+                <video src="assets/restoria/trailer/restoria-trailer.mp4" playsinline preload="metadata" poster="assets/restoria/trailer/trailer-poster.jpg" class="cog-video-player"></video>
                 <div class="cog-player-ui">
-                    <button class="cog-play-btn playing">
+                    <button class="cog-play-btn">
                         <div class="cog-play-icon"></div>
                     </button>
                     <div class="cog-controls-bar">
@@ -60,9 +60,9 @@
                         <div class="cog-controls-row">
                             <div class="cog-controls-left">
                                 <button class="cog-control-btn cog-play-toggle">
-                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
                                 </button>
-                                <span class="cog-time-display">0:00 / 0:30</span>
+                                <span class="cog-time-display">0:00 / 1:00</span>
                             </div>
                             <div class="cog-controls-right">
                                 <button class="cog-control-btn cog-volume-toggle">
@@ -96,18 +96,18 @@
             </a>
 
             <div class="cog-media-container">
-                <img src="assets/restoria_museum_room_1775536668193.png" alt="MNI Collab showcase">
+                <img src="assets/mni/mni-collab-wide.jpg" alt="N.Point Studio team visiting Museum dan Cagar Budaya">
             </div>
 
-            <p class="cog-description">A partnership between N.Point Studio and MNI to build next-generation interactive experiences</p>
+            <p class="cog-description">A partnership between N.Point Studio and Museum dan Cagar Budaya to bring real artifacts to life</p>
         </section>
 
-        <!-- SECTION 3: STUDIO REEL -->
+        <!-- SECTION 3: ARTIFACTS (N.Point Studio craft) -->
         <section class="cog-section" id="npoint">
             <h1 class="cog-headline">
-                Peek behind the<br>
-                scenes in our<br>
-                <a href="#npoint" class="cog-inline-link">studio reel</a>
+                Every artifact is<br>
+                handcrafted by<br>
+                <a href="#npoint" class="cog-inline-link">N.Point Studio</a>
             </h1>
 
             <a href="#npoint" class="cog-status-pill">
@@ -117,39 +117,25 @@
                 </span>
             </a>
 
-            <div class="cog-video-container is-paused">
-                <video src="assets/EsgnPI0P198047tZdTSOdJqfGc.mp4" loop muted playsinline preload="metadata" poster="assets/restoria_museum_desk_1775536633255.png" class="cog-video-player"></video>
-                <div class="cog-player-ui">
-                    <button class="cog-play-btn">
-                        <div class="cog-play-icon"></div>
-                    </button>
-                    <div class="cog-controls-bar">
-                        <div class="cog-timeline-container">
-                            <div class="cog-timeline">
-                                <div class="cog-progress"></div>
-                            </div>
-                        </div>
-                        <div class="cog-controls-row">
-                            <div class="cog-controls-left">
-                                <button class="cog-control-btn cog-play-toggle">
-                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
-                                </button>
-                                <span class="cog-time-display">0:00 / 0:30</span>
-                            </div>
-                            <div class="cog-controls-right">
-                                <button class="cog-control-btn cog-volume-toggle">
-                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg>
-                                </button>
-                                <button class="cog-control-btn cog-fullscreen-toggle">
-                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
+            <div class="cog-artifact-scroller restoria-scroller">
+                <div class="scroller-track">
+                    <img src="assets/restoria/artifacts/keris.png" alt="Keris — traditional Indonesian dagger">
+                    <img src="assets/restoria/artifacts/jar-china.png" alt="Chinese porcelain jar">
+                    <img src="assets/restoria/artifacts/scarab-mesir.png" alt="Egyptian scarab">
+                    <img src="assets/restoria/artifacts/kendi-china.png" alt="Chinese kendi vessel">
+                    <img src="assets/restoria/artifacts/coin.png" alt="Ancient coin">
+                    <img src="assets/restoria/artifacts/horse-china.png" alt="Chinese porcelain horse">
+                    <!-- Duplicate for a seamless loop -->
+                    <img src="assets/restoria/artifacts/keris.png" alt="Keris — traditional Indonesian dagger">
+                    <img src="assets/restoria/artifacts/jar-china.png" alt="Chinese porcelain jar">
+                    <img src="assets/restoria/artifacts/scarab-mesir.png" alt="Egyptian scarab">
+                    <img src="assets/restoria/artifacts/kendi-china.png" alt="Chinese kendi vessel">
+                    <img src="assets/restoria/artifacts/coin.png" alt="Ancient coin">
+                    <img src="assets/restoria/artifacts/horse-china.png" alt="Chinese porcelain horse">
                 </div>
             </div>
 
-            <p class="cog-description">A quick showcase of N.Point Studio's design process, cozy mechanics, and future milestones</p>
+            <p class="cog-description">From Indonesian keris to Egyptian scarabs — every relic in Restoria is sculpted, painted, and polished in-house</p>
         </section>
 
         <!-- STATEMENT -->
@@ -165,7 +151,7 @@
             <div class="cog-nav-list">
                 <div class="cog-nav-item">
                     <span class="cog-nav-name">N.Point Studio</span>
-                    <a href="#npoint" class="cog-nav-action">reel →</a>
+                    <a href="#npoint" class="cog-nav-action">artifacts →</a>
                 </div>
                 <div class="cog-nav-item">
                     <span class="cog-nav-name">Restoria</span>
