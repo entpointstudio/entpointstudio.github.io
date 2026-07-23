@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    initVideoPlayers();
+
     // Legacy fade-up (used by restoria.html)
     const fadeElements = document.querySelectorAll('.fade-up');
     if (fadeElements.length) {
@@ -25,6 +27,95 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('load', initCogAnimations);
     }
 });
+
+// Custom Video Player Interactivity — works on any .cog-video-container
+function initVideoPlayers() {
+    document.querySelectorAll('.cog-video-container').forEach(container => {
+        const video = container.querySelector('.cog-video-player');
+        if (!video) return;
+        const playBtn = container.querySelector('.cog-play-btn');
+        const playToggle = container.querySelector('.cog-play-toggle');
+        const volumeToggle = container.querySelector('.cog-volume-toggle');
+        const fullscreenToggle = container.querySelector('.cog-fullscreen-toggle');
+        const progress = container.querySelector('.cog-progress');
+        const timelineContainer = container.querySelector('.cog-timeline-container');
+        const timeDisplay = container.querySelector('.cog-time-display');
+
+        // Format time display
+        function formatTime(seconds) {
+            const min = Math.floor(seconds / 60);
+            const sec = Math.floor(seconds % 60);
+            return `${min}:${sec < 10 ? '0' : ''}${sec}`;
+        }
+
+        // Update time display when metadata loads
+        video.addEventListener('loadedmetadata', () => {
+            timeDisplay.textContent = `0:00 / ${formatTime(video.duration)}`;
+        });
+
+        // If metadata is already loaded
+        if (video.duration) {
+            timeDisplay.textContent = `0:00 / ${formatTime(video.duration)}`;
+        }
+
+        // Toggle play/pause
+        function togglePlay() {
+            if (video.paused) {
+                video.play();
+                playBtn.classList.add('playing');
+                container.classList.remove('is-paused');
+                playToggle.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>';
+            } else {
+                video.pause();
+                playBtn.classList.remove('playing');
+                container.classList.add('is-paused');
+                playToggle.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>';
+            }
+        }
+
+        playBtn.addEventListener('click', togglePlay);
+        playToggle.addEventListener('click', togglePlay);
+        video.addEventListener('click', togglePlay);
+
+        // Update Progress Bar & Timer
+        video.addEventListener('timeupdate', () => {
+            if (video.duration) {
+                const percentage = (video.currentTime / video.duration) * 100;
+                progress.style.width = `${percentage}%`;
+                timeDisplay.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+            }
+        });
+
+        // Seek on Timeline click
+        timelineContainer.addEventListener('click', (e) => {
+            const rect = timelineContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const percentage = clickX / rect.width;
+            video.currentTime = percentage * video.duration;
+        });
+
+        // Mute / Unmute Toggle
+        volumeToggle.addEventListener('click', () => {
+            video.muted = !video.muted;
+            if (video.muted) {
+                volumeToggle.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z" style="opacity:0.5;"/></svg>';
+            } else {
+                volumeToggle.innerHTML = '<svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg>';
+            }
+        });
+
+        // Fullscreen Toggle
+        fullscreenToggle.addEventListener('click', () => {
+            if (!document.fullscreenElement) {
+                container.requestFullscreen().catch(err => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        });
+    });
+}
 
 function initCogAnimations() {
     gsap.registerPlugin(ScrollTrigger);
@@ -88,6 +179,15 @@ function initCogAnimations() {
                 scrollTrigger: { trigger: description, start: 'top 92%' }
             });
         }
+
+        // Restoria-page extras: CTA buttons, testimonial, stats, gallery, socials
+        const extras = section.querySelectorAll(':scope > .btn, .prologue-buttons, .quote-section, .stats-bar, .restoria-scroller, .social-grid');
+        if (extras.length) {
+            gsap.from(extras, {
+                y: 40, opacity: 0, duration: 0.9, ease: 'power3.out', stagger: 0.1,
+                scrollTrigger: { trigger: extras[0], start: 'top 92%' }
+            });
+        }
     });
 
     // Statement rises with a spring
@@ -114,7 +214,18 @@ function initCogAnimations() {
         { el: '#restoria', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' },
         { el: '#mni', bg: '#f4e6cf', ink: '#31231d', link: '#a85b38', ring: 'rgba(49,35,29,0.25)' },
         { el: '#npoint', bg: '#31231d', ink: '#fff7f3', link: '#e9c98f', ring: 'rgba(255,247,243,0.35)' },
-        { el: '.cog-statement', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' }
+        { el: '.cog-statement', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' },
+
+        // restoria.html's own zones
+        { el: '#r-hero', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' },
+        { el: '#r-prologue', bg: '#31231d', ink: '#fff7f3', link: '#e9c98f', ring: 'rgba(255,247,243,0.35)' },
+        { el: '#r-story', bg: '#f4e6cf', ink: '#31231d', link: '#a85b38', ring: 'rgba(49,35,29,0.25)' },
+        { el: '#r-feature-1', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' },
+        { el: '#r-feature-2', bg: '#f4e6cf', ink: '#31231d', link: '#a85b38', ring: 'rgba(49,35,29,0.25)' },
+        { el: '#r-feature-3', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' },
+        { el: '#r-feature-4', bg: '#f4e6cf', ink: '#31231d', link: '#a85b38', ring: 'rgba(49,35,29,0.25)' },
+        { el: '#r-gallery', bg: '#31231d', ink: '#fff7f3', link: '#e9c98f', ring: 'rgba(255,247,243,0.35)' },
+        { el: '#r-socials', bg: '#ffffff', ink: '#000000', link: '#0099ff', ring: 'rgba(255,255,255,0)' }
     ];
     colorZones.forEach(zone => {
         if (!document.querySelector(zone.el)) return;

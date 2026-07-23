@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>N.Point Studio | Restoria</title>
+    <title>EntPoint Studio | Restoria</title>
     <link rel="stylesheet" href="style.css?v=2">
 </head>
-<body class="restoria-page">
+<body class="cog-page">
 
     <!-- NAVBAR -->
-    <nav class="navbar fade-up">
+    <nav class="navbar">
         <div class="navbar-logo">
             <a href="index.html" style="text-decoration: none;">
-                <img src="assets/Logo Npoint.png" alt="N.Point Logo" class="npoint-logo-img">
+                <img src="assets/logos/entpoint-logo.png" alt="EntPoint Logo" class="navbar-logo-img">
             </a>
         </div>
         <div class="nav-links">
@@ -22,154 +22,212 @@
         </div>
     </nav>
 
-    <div class="page-wrapper">
+    <div class="cog-container">
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <img src="assets/restoria/logo/logo-restoria-sm.jpg" alt="Restoria" class="restoria-icon-badge fade-up delay-1">
-        <h1 class="fade-up delay-1">RESTORIA</h1>
-        <div class="subtitle fade-up delay-2">- Cozy Artifact Restoration -</div>
-        <a href="#" class="btn fade-up delay-2">
-            Wishlist Now on Steam
-            <span class="steam-circle"><img src="assets/framer_assets/steam.svg" alt="Steam"></span>
-        </a>
-    </section>
+        <!-- SECTION: HERO (wordmark, wishlist CTA, trailer) -->
+        <section class="cog-section cog-section-first" id="r-hero">
+            <img src="assets/restoria/logo/restoria-badge.jpg" alt="Restoria" class="restoria-icon-badge">
+            <h1 class="cog-headline">RESTORIA</h1>
+            <p class="cog-description">— Cozy Artifact Restoration —</p>
 
-    <!-- VIDEO SECTION -->
-    <div class="video-hero fade-up delay-1">
-        <video src="assets/restoria/trailer/restoria-trailer.mp4" poster="assets/restoria/keyart/key-art.jpg" controls playsinline preload="metadata"></video>
-    </div>
+            <a href="#" class="btn">
+                Wishlist Now on Steam
+                <span class="steam-circle"><img src="assets/icons/steam.svg" alt="Steam"></span>
+            </a>
 
-    <!-- INTRO QUOTE & STATS -->
-    <section class="quote-section fade-up">
-        <h2>"Restoria is a relaxing game where you play as Nova, a museum conservator who uncovers the hidden stories behind ancient artifacts through mindful cleaning and restoration"</h2>
-
-        <img src="assets/framer_assets/udIR0NTsKbFgoYaOk8cL0IAesZA.png" alt="Brush Icon" class="restoria-icon">
-        <h3 class="quote-sub">It's like Power Wash, but you gently restore historical artifacts.</h3>
-        <img src="assets/framer_assets/hHoIqAUG4XiZZFU8V3a0F2oRHE.png" alt="Bowl Icon" class="restoria-icon">
-    </section>
-
-    <div class="stats-bar fade-up delay-1">
-        <div class="stat-item">
-            <h3>15+</h3>
-            <p>Artifact</p>
-        </div>
-        <div class="stat-item">
-            <h3>32+</h3>
-            <p>Investments.</p>
-        </div>
-        <div class="stat-item">
-            <h3>10K</h3>
-            <p>Users.</p>
-        </div>
-    </div>
-
-    <!-- FEATURE SHOWCASE -->
-    <section class="feature-showcase">
-
-        <!-- Feature 1 -->
-        <div class="feature-row fade-up">
-            <div class="feature-text">
-                <h2>Unlock New Artifact</h2>
-                <p>Discover a variety of ancient objects, each with its own unique dirt, grime, and history waiting to be revealed.</p>
+            <div class="cog-video-container is-paused">
+                <video src="assets/restoria/trailer/restoria-trailer.mp4" playsinline preload="metadata" poster="assets/restoria/keyart/key-art.jpg" class="cog-video-player"></video>
+                <div class="cog-player-ui">
+                    <button class="cog-play-btn">
+                        <div class="cog-play-icon"></div>
+                    </button>
+                    <div class="cog-controls-bar">
+                        <div class="cog-timeline-container">
+                            <div class="cog-timeline">
+                                <div class="cog-progress"></div>
+                            </div>
+                        </div>
+                        <div class="cog-controls-row">
+                            <div class="cog-controls-left">
+                                <button class="cog-control-btn cog-play-toggle">
+                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+                                </button>
+                                <span class="cog-time-display">0:00 / 0:00</span>
+                            </div>
+                            <div class="cog-controls-right">
+                                <button class="cog-control-btn cog-volume-toggle">
+                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M16.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77zM3 9v6h4l5 5V4L7 9H3z"/></svg>
+                                </button>
+                                <button class="cog-control-btn cog-fullscreen-toggle">
+                                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="feature-img">
+        </section>
+
+        <!-- SECTION: PLAY THE PROLOGUE (demo, ahead of full release) -->
+        <section class="cog-section" id="r-prologue">
+            <h1 class="cog-headline">Play the Prologue now</h1>
+            <div class="prologue-buttons">
+                <a href="https://apps.apple.com/id/app/restoria/id6755015559" target="_blank" class="btn">
+                    Download on the App Store
+                    <span class="steam-circle"><img src="assets/icons/apple.svg" alt="Apple" style="filter: brightness(0);"></span>
+                </a>
+                <a href="https://entpoint-studio.itch.io/restoria" target="_blank" class="btn">
+                    Play on itch.io
+                </a>
+            </div>
+        </section>
+
+        <!-- SECTION: STORY (testimonial + stats) -->
+        <section class="cog-section" id="r-story">
+            <div class="quote-section">
+                <h2>"Restoria is a relaxing game where you play as Nova, a museum conservator who uncovers the hidden stories behind ancient artifacts through mindful cleaning and restoration"</h2>
+                <img src="assets/restoria/icons/brush-icon.png" alt="Brush Icon" class="restoria-icon">
+                <h3 class="quote-sub">It's like Power Wash, but you gently restore historical artifacts.</h3>
+                <img src="assets/restoria/icons/bowl-icon.png" alt="Bowl Icon" class="restoria-icon">
+            </div>
+
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Artifact</p>
+                </div>
+                <div class="stat-item">
+                    <h3>32+</h3>
+                    <p>Investments.</p>
+                </div>
+                <div class="stat-item">
+                    <h3>10K</h3>
+                    <p>Users.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: FEATURE 1 -->
+        <section class="cog-section" id="r-feature-1">
+            <h1 class="cog-headline">Unlock New Artifact</h1>
+            <div class="cog-media-container">
                 <img src="assets/restoria/artifacts/jar-china.png" alt="Chinese porcelain jar artifact">
             </div>
-        </div>
+            <p class="cog-description">Discover a variety of ancient objects, each with its own unique dirt, grime, and history waiting to be revealed.</p>
+        </section>
 
-        <!-- Feature 2 (Reverse) -->
-        <div class="feature-row reverse fade-up">
-            <div class="feature-text">
-                <h2>Cleaning and Restore</h2>
-                <p>Mindfully clean and polish the artifacts using specialized tools, bringing them back to their original glory in a satisfying process.</p>
-            </div>
-            <div class="feature-img">
+        <!-- SECTION: FEATURE 2 -->
+        <section class="cog-section" id="r-feature-2">
+            <h1 class="cog-headline">Cleaning and Restore</h1>
+            <div class="cog-media-container">
                 <img src="assets/restoria/screenshots/screenshot-1.jpg" alt="Cleaning an artifact at the workbench">
             </div>
-        </div>
+            <p class="cog-description">Mindfully clean and polish the artifacts using specialized tools, bringing them back to their original glory in a satisfying process.</p>
+        </section>
 
-        <!-- Feature 3 -->
-        <div class="feature-row fade-up">
-            <div class="feature-text">
-                <h2>Reveal History</h2>
-                <p>Once restored, uncover the magical stories and historical secrets hidden within the item, shedding light on the past.</p>
-            </div>
-            <div class="feature-img">
+        <!-- SECTION: FEATURE 3 -->
+        <section class="cog-section" id="r-feature-3">
+            <h1 class="cog-headline">Reveal History</h1>
+            <div class="cog-media-container">
                 <img src="assets/restoria/artifacts/scarab-mesir.png" alt="Egyptian scarab artifact">
             </div>
-        </div>
+            <p class="cog-description">Once restored, uncover the magical stories and historical secrets hidden within the item, shedding light on the past.</p>
+        </section>
 
-        <!-- Feature 4 (Reverse) -->
-        <div class="feature-row reverse fade-up">
-            <div class="feature-text">
-                <h2>Display in Museum</h2>
-                <p>Arrange your newly conserved masterpieces inside the museum, curating exhibitions that tell a compelling overarching narrative.</p>
-            </div>
-            <div class="feature-img">
+        <!-- SECTION: FEATURE 4 -->
+        <section class="cog-section" id="r-feature-4">
+            <h1 class="cog-headline">Display in Museum</h1>
+            <div class="cog-media-container">
                 <img src="assets/restoria/screenshots/screenshot-2.jpg" alt="Restoria main menu with the museum display">
             </div>
-        </div>
+            <p class="cog-description">Arrange your newly conserved masterpieces inside the museum, curating exhibitions that tell a compelling overarching narrative.</p>
+        </section>
 
-    </section>
+        <!-- SECTION: GALLERY -->
+        <section class="cog-section" id="r-gallery">
+            <h1 class="cog-headline">Restoria in action</h1>
+            <div class="restoria-scroller">
+                <div class="scroller-track">
+                    <img src="assets/restoria/screenshots/screenshot-1.jpg" alt="Cleaning an artifact at the workbench">
+                    <img src="assets/restoria/screenshots/screenshot-2.jpg" alt="Restoria main menu">
+                    <img src="assets/restoria/screenshots/screenshot-3.jpg" alt="Restoria gameplay scene">
+                    <img src="assets/restoria/screenshots/screenshot-4.jpg" alt="Restoria gameplay scene">
+                    <img src="assets/restoria/screenshots/screenshot-5.jpg" alt="Restoria gameplay scene">
+                    <!-- Duplicate for infinite scroll -->
+                    <img src="assets/restoria/screenshots/screenshot-1.jpg" alt="Cleaning an artifact at the workbench">
+                    <img src="assets/restoria/screenshots/screenshot-2.jpg" alt="Restoria main menu">
+                    <img src="assets/restoria/screenshots/screenshot-3.jpg" alt="Restoria gameplay scene">
+                    <img src="assets/restoria/screenshots/screenshot-4.jpg" alt="Restoria gameplay scene">
+                    <img src="assets/restoria/screenshots/screenshot-5.jpg" alt="Restoria gameplay scene">
+                </div>
+            </div>
+        </section>
 
-    <!-- IMAGE SCROLLER -->
-    <div class="restoria-scroller fade-up">
-        <div class="scroller-track">
-            <img src="assets/restoria/screenshots/screenshot-1.jpg" alt="Cleaning an artifact at the workbench">
-            <img src="assets/restoria/screenshots/screenshot-2.jpg" alt="Restoria main menu">
-            <img src="assets/restoria/screenshots/screenshot-3.jpg" alt="Restoria gameplay scene">
-            <img src="assets/restoria/screenshots/screenshot-4.jpg" alt="Restoria gameplay scene">
-            <img src="assets/restoria/screenshots/screenshot-5.jpg" alt="Restoria gameplay scene">
-            <!-- Duplicate for infinite scroll -->
-            <img src="assets/restoria/screenshots/screenshot-1.jpg" alt="Cleaning an artifact at the workbench">
-            <img src="assets/restoria/screenshots/screenshot-2.jpg" alt="Restoria main menu">
-            <img src="assets/restoria/screenshots/screenshot-3.jpg" alt="Restoria gameplay scene">
-            <img src="assets/restoria/screenshots/screenshot-4.jpg" alt="Restoria gameplay scene">
-            <img src="assets/restoria/screenshots/screenshot-5.jpg" alt="Restoria gameplay scene">
-        </div>
+        <!-- SECTION: SOCIALS -->
+        <section class="cog-section" id="r-socials">
+            <h1 class="cog-headline">You can also find us on</h1>
+            <div class="social-grid">
+                <a href="https://www.instagram.com/restoria.game/" target="_blank" class="social-box"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@playrestoria" target="_blank" class="social-box"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+                <a href="https://x.com/PlayRestoria" target="_blank" class="social-box"><img src="assets/icons/x.svg" alt="X"></a>
+                <a href="https://www.youtube.com/@entpoint.studio" target="_blank" class="social-box"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+                <a href="https://discord.gg/MCKzhtsyw" target="_blank" class="social-box"><img src="assets/icons/discord.svg" alt="Discord"></a>
+                <a href="#" class="social-box"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="#" class="social-box"><img src="assets/icons/steam.svg" alt="Steam" style="filter: brightness(0);"></a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="cog-footer">
+            <div class="cog-footer-brand">
+                <img src="assets/logos/entpoint-logo-footer.png" alt="EntPoint Logo" class="cog-logo-img">
+            </div>
+            <div class="cog-nav-list">
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">Restoria</span>
+                    <a href="restoria.html" class="cog-nav-action">play →</a>
+                </div>
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">Heir of Smith</span>
+                    <a href="index.html#home" class="cog-nav-action">play →</a>
+                </div>
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">About Us</span>
+                    <a href="index.html#about" class="cog-nav-action">about →</a>
+                </div>
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">Careers</span>
+                    <a href="#" class="cog-nav-action">join →</a>
+                </div>
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">Press Kit</span>
+                    <a href="#" class="cog-nav-action">view →</a>
+                </div>
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">Privacy Policy</span>
+                    <a href="#" class="cog-nav-action">view →</a>
+                </div>
+                <div class="cog-nav-item">
+                    <span class="cog-nav-name">Terms of Service</span>
+                    <a href="#" class="cog-nav-action">view →</a>
+                </div>
+            </div>
+            <div class="cog-footer-meta">
+                <div class="cog-socials">
+                    <a href="https://www.instagram.com/restoria.game/" target="_blank"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@playrestoria" target="_blank"><img src="assets/icons/tiktok.svg" alt="TikTok"></a>
+                    <a href="https://x.com/PlayRestoria" target="_blank"><img src="assets/icons/x.svg" alt="X"></a>
+                    <a href="https://www.youtube.com/@entpoint.studio" target="_blank"><img src="assets/icons/youtube.svg" alt="YouTube"></a>
+                    <a href="https://discord.gg/MCKzhtsyw" target="_blank"><img src="assets/icons/discord.svg" alt="Discord"></a>
+                </div>
+                <div class="cog-socials">
+                    <a href="mailto:entpoint.studio@gmail.com">Contact</a>
+                </div>
+            </div>
+        </footer>
+
     </div>
 
-    <!-- SOCIALS SECTION -->
-    <section class="restoria-socials fade-up">
-        <h2>You can also find us on</h2>
-        <div class="social-grid">
-            <a href="https://www.instagram.com/restoria.game/" target="_blank" class="social-box"><img src="assets/framer_assets/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.tiktok.com/@playrestoria" target="_blank" class="social-box"><img src="assets/framer_assets/tiktok.svg" alt="TikTok"></a>
-            <a href="#" class="social-box"><img src="assets/framer_assets/facebook.svg" alt="Facebook"></a>
-            <a href="#" class="social-box"><img src="assets/framer_assets/discord.svg" alt="Discord"></a>
-            <a href="#" class="social-box"><img src="assets/framer_assets/linkedin.svg" alt="LinkedIn"></a>
-            <a href="#" class="social-box"><img src="assets/framer_assets/steam.svg" alt="Steam" style="filter: brightness(0);"></a>
-            <a href="#" class="social-box"><img src="assets/framer_assets/apple.svg" alt="Apple" style="filter: brightness(0);"></a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="fade-up">
-        <div class="footer-logo">
-            <img src="assets/framer_assets/0O8AmmEE0BCmutnB0kLEMtS75s.png" alt="N.Point Logo" class="npoint-logo-img">
-        </div>
-        <div class="footer-links">
-            <div class="footer-col">
-                <h4>Games</h4>
-                <a href="restoria.html">Restoria</a>
-                <a href="index.html#home">Heir of Smith</a>
-            </div>
-            <div class="footer-col">
-                <h4>Studio</h4>
-                <a href="index.html#about">About Us</a>
-                <a href="#">Careers</a>
-                <a href="#">Press Kit</a>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-            </div>
-        </div>
-    </footer>
-
-    </div>
     <!-- GSAP & ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
